@@ -71,15 +71,6 @@
 					{/if}
 				}
 
-				.section-features {
-					{if $core.config.bg_features_use_color}
-						background: {$core.config.bg_features_color};
-					{elseif $core.config.bg_features}
-						background-image: url('{$core.page.nonProtocolUrl}uploads/{$core.config.bg_features}');
-					{/if}
-				}
-
-				.footer-blocks { background: {$core.config.footer_blocks_bg}; }
 				.footer { background: {$core.config.footer_bg}; }
 				.nav-footer > li > a,
 				.nav-footer > li > a:focus { color: {$core.config.footer_link}; }
@@ -102,18 +93,12 @@
 						{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin"></span></a></li>{/if}
 					</ul>
 				{/if}
-				{if $core.config.search_inventory}
-					<form method="get" action="{$smarty.const.IA_URL}search/" class="search-inventory pull-right">
-						<input type="text" name="q" placeholder="{lang key='search'}">
-						<button type="submit"><span class="fa fa-search"></span></button>
-					</form>
-				{/if}
 				{include 'language-selector.tpl'}
 				{ia_blocks block='inventory'}
 			</div>
 		</div>
 
-		<nav class="navbar navbar-default {if $core.config.navbar_sticky}navbar-sticky{/if}">
+		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
@@ -136,17 +121,6 @@
 				</div>
 
 				<div class="collapse navbar-collapse" id="navbar-collapse">
-					{if $core.config.search_navbar}
-						<form method="get" action="{$smarty.const.IA_URL}search/" class="search-navbar pull-right">
-							<button class="search-navbar__toggle js-search-navbar-toggle" type="button"><span class="fa fa-search"></span></button>
-							<div class="input-group">
-								<input type="text" name="q" class="form-control" placeholder="{lang key='search'}">
-								<div class="input-group-btn">
-									<button class="btn btn-primary" type="submit">{lang key='search'}</span></button>
-								</div>
-							</div>
-						</form>
-					{/if}
 					{ia_blocks block='account'}
 					{ia_blocks block='mainmenu'}
 				</div>
