@@ -5,62 +5,6 @@
 
 
 //
-// Inventory search
-// --------------------------------------------------
-
-.search-inventory {
-  margin: 0 20px 0 0;
-  position: relative;
-  padding: 0 0 0 15px;
-  background: fade(#fff, 3%);
-
-  &.pull-right {
-    margin: 0 0 0 20px;
-  }
-
-  input {
-    background: none;
-    border: 0 none;
-    line-height: @inventory-height;
-    width: 100px;
-    padding: 0;
-    color: @inventory-text-color;
-
-    .placeholder(fade(@inventory-text-color, 20%));
-
-    &:focus {
-      outline: 0 none;
-    }
-  }
-
-  button {
-    border: 0;
-    background: none;
-    color: @inventory-link-color;
-    line-height: @inventory-height;
-    padding: 0 15px 0 15px;
-
-    &:focus {
-      outline: 0 none;
-    }
-
-    &:hover {
-      background: fade(#fff, 3%);
-    }
-  }
-
-  @media (max-width: @grid-float-breakpoint) {
-    
-    &.pull-right {
-      margin: 0 20px 0 0;
-      float: left !important;
-    }
-  }
-}
-
-
-
-//
 // Inventory navs
 // --------------------------------------------------
 
@@ -71,21 +15,28 @@
 
   > li {
     float: left;
-    margin: 0 10px 0 0;
+    margin: 0 24px 0 0;
 
     > a {
-      &,
+      display: block;
+      line-height: @inventory-height;
+      color: @inventory-link-color;
+      font-size: 11px;
+      text-transform: uppercase;
+
+      &:hover,
       &:focus {
-        display: block;
-        line-height: @inventory-height;
-        color: @inventory-link-color;
-        font-size: 12px;
+        color: @inventory-link-hover-color;
         text-decoration: none;
       }
 
-      &:hover {
-        color: @inventory-link-hover-color;
-        text-decoration: underline;
+      [class^="icon-"] {
+        font-size: 18px;
+        vertical-align: middle;
+      }
+
+      .icon-flag {
+        margin-right: 5px;
       }
     }
 
@@ -114,16 +65,11 @@
 .nav-inventory-social {
 
   > li {
-    margin: 0;
+    margin-right: 12px;
 
     > a {
-      padding: 0 15px;
-      border-left: 1px solid fade(#fff, 5%);
+      font-size: 18px;
       color: @inventory-social-link-color;
-    }
-
-    &:last-child > a {
-      border-right: 1px solid fade(#fff, 5%);
     }
   }
 
@@ -131,7 +77,7 @@
     margin: 0 0 0 20px;
 
     > li {
-      margin: 0;
+      margin-left: 12px;
     }
   }
 }

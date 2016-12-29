@@ -10,10 +10,11 @@
 
 // template colors
 
-@brand-dark:       #323232;
-@brand-primary:    #00bff3;
+@brand-dark:       #282d35;
+@brand-primary:    #ffaa89;
 @link-color:       @brand-primary;
 @link-hover-color: darken(@link-color, 15%);
+@text-color:       #626a77;
 @body-bg:          #fff;
 @headings-color:   inherit;
 @border-color:     #eee;
@@ -22,11 +23,14 @@
 @vertical-rhythm:  30px;
 @sections-v-pad:   100px;
 
-// font
-// @import url(//fonts.googleapis.com/css?family=Roboto:300,400,700,400italic,700italic&subset=latin,cyrillic);
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,800&subset=cyrillic');
+// fonts
+@import url('//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('//fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,latin-ext,vietnamese');
+@import url('//fonts.googleapis.com/css?family=Varela+Round&subset=hebrew');
 
-@font-family-base: 'Roboto', @font-family-sans-serif;
+@font-family-base: 'PT Sans', @font-family-sans-serif;
+@font-family-nato-sans: 'Noto Sans', @font-family-sans-serif;
+@font-family-varela-round: 'Varela Round', @font-family-sans-serif;
 
 @border-radius-base:        3px;
 @border-radius-large:       4px;
@@ -38,13 +42,13 @@
 // Inventory
 // --------------------------------------------------
 
-@inventory-bg:                 @brand-dark;
-@inventory-height:             50px;
-@inventory-link-color:         fade(#fff, 45%);
-@inventory-link-hover-color:   fade(#fff, 50%);
-@inventory-link-active-color:  fade(#fff, 70%);
-@inventory-social-link-color:  fade(#fff, 70%);
-@inventory-text-color:         fade(#fff, 30%);
+@inventory-bg:                 transparent;
+@inventory-height:             40px;
+@inventory-link-color:         fade(#fff, 50%);
+@inventory-link-hover-color:   fade(#fff, 55%);
+@inventory-link-active-color:  fade(#fff, 60%);
+@inventory-social-link-color:  fade(#fff, 50%);
+@inventory-text-color:         fade(#fff, 50%);
 
 
 
@@ -57,8 +61,8 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 // Navbar links
-@navbar-default-link-color:                fade(@brand-dark, 80%);
-@navbar-default-link-hover-color:          fade(@brand-dark, 60%);
+@navbar-default-link-color:                @text-color;
+@navbar-default-link-hover-color:          fade(@navbar-default-link-color, 80%);
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         @brand-primary;
 @navbar-default-link-active-bg:            transparent;
@@ -125,8 +129,8 @@
 
 @footer-bg:                 @brand-dark;
 @footer-height:             60px;
-@footer-link-color:         fade(#fff, 45%);
-@footer-link-hover-color:   fade(#fff, 50%);
-@footer-link-active-color:  fade(#fff, 70%);
-@footer-social-link-color:  fade(#fff, 70%);
-@footer-text-color:         fade(#fff, 30%);
+@footer-link-color:         fade(#fff, 50%);
+@footer-link-hover-color:   fade(#fff, 55%);
+@footer-link-active-color:  fade(#fff, 60%);
+@footer-social-link-color:  fade(#fff, 20%);
+@footer-text-color:         fade(#fff, 20%);

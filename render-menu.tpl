@@ -1,7 +1,7 @@
 {if 'mainmenu' == $position}
 	{ia_menu menus=$menu.contents class="nav navbar-nav navbar-right nav-main {$menu.classname}"}
 {elseif 'inventory' == $position}
-	{ia_menu menus=$menu.contents class="nav-inventory hidden-sm hidden-xs pull-right {$menu.classname}"}
+	{ia_menu menus=$menu.contents class="nav-inventory hidden-sm hidden-xs pull-left {$menu.classname}"}
 {elseif 'account' == $position}
 	{if 'account' == $menu.name && $member && $core.config.members_enabled}
 		<ul class="nav navbar-nav navbar-right nav-account">
@@ -9,14 +9,11 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					{*printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email*}
 					{$member.fullname|default:$member.username}
-					<span class="caret"></span>
+					<i class="fa fa-angle-down"></i>
 				</a>
 				{ia_hooker name='smartyFrontInsideAccountBox'}
 				{ia_menu menus=$menu.contents class='dropdown-menu' loginout=true}
 			</li>
-			{access object='admin_access'}
-				<li><a rel="nofollow" href="{$smarty.const.IA_ADMIN_URL}" target="_blank" title="{lang key='admin_dashboard'}"><span class="fa fa-cog"></span><span class="hidden-lg"> {lang key='admin_dashboard'}</span></a></li>
-			{/access}
 		</ul>
 	{else}
 		<ul class="nav navbar-nav navbar-right">

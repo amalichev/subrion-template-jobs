@@ -60,22 +60,22 @@
 			name="custom_color_text"
 			type="colorpicker"
 			order="3004"
-			description="Text color">#333333</config>
+			description="Text color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_headings"
 			type="colorpicker"
 			order="3005"
-			description="Headings color">#333333</config>
+			description="Headings color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_link"
 			type="colorpicker"
 			order="3006"
-			description="Link color">#38b7ea</config>
+			description="Link color">#ffaa89</config>
 	<config group="template_jobs"
 			name="custom_color_link_hover"
 			type="colorpicker"
 			order="3007"
-			description="Link hover color">#1490c1</config>
+			description="Link hover color">#ff733c</config>
 
 	<config group="template_jobs" 
 			type="divider"
@@ -84,22 +84,22 @@
 			name="custom_color_inventory_bg"
 			type="colorpicker"
 			order="3101"
-			description="Background">#323232</config>
+			description="Background">rgba(255,255,255,0)</config>
 	<config group="template_jobs"
 			name="custom_color_inventory_link"
 			type="colorpicker"
 			order="3102"
-			description="Link color">rgba(255,255,255,0.45)</config>
+			description="Link color">rgba(255,255,255,0.5)</config>
 	<config group="template_jobs"
 			name="custom_color_inventory_link_hover"
 			type="colorpicker"
 			order="3103"
-			description="Link hover color">rgba(255,255,255,0.5)</config>
+			description="Link hover color">rgba(255,255,255,0.55)</config>
 	<config group="template_jobs"
 			name="custom_color_inventory_link_active"
 			type="colorpicker"
 			order="3104"
-			description="Link active color">rgba(255,255,255,0.7)</config>
+			description="Link active color">rgba(255,255,255,0.6)</config>
 
 	<config group="template_jobs" 
 			type="divider"
@@ -108,7 +108,7 @@
 			name="max_top_menu_items"
 			type="text"
 			description="Max number of items in Main Menu"
-			order="3201">6</config>
+			order="3201">5</config>
 	<config group="template_jobs"
 			name="enable_text_logo"
 			type="radio"
@@ -130,17 +130,17 @@
 			name="custom_color_navbar_link"
 			type="colorpicker"
 			order="3205"
-			description="Link color">rgba(50,50,50,0.6)</config>
+			description="Link color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_navbar_link_hover"
 			type="colorpicker"
 			order="3206"
-			description="Link hover color">rgba(50,50,50,0.8)</config>
+			description="Link hover color">rgba(98,106,119,0.8)</config>
 	<config group="template_jobs"
 			name="custom_color_navbar_link_active"
 			type="colorpicker"
 			order="3207"
-			description="Link active color">#38b7ea</config>
+			description="Link active color">#ffaa89</config>
 
 	<config group="template_jobs" 
 			type="divider"
@@ -161,7 +161,7 @@
 			type="colorpicker"
 			order="3303"
 			show="bg_header_use_color|1"
-			description="Background color">#6b3561</config>
+			description="Background color">#282d35</config>
 
 	<config group="template_jobs"
 			type="divider"
@@ -182,7 +182,7 @@
 			type="colorpicker"
 			order="3403"
 			show="bg_header_use_color|1"
-			description="Background color">#6b3561</config>
+			description="Background color">#646775</config>
 
 	<config group="template_jobs" 
 			type="divider"
@@ -191,22 +191,22 @@
 			name="footer_bg"
 			type="colorpicker"
 			order="3501"
-			description="Background">#323232</config>
+			description="Background">#282d35</config>
 	<config group="template_jobs"
 			name="footer_link"
 			type="colorpicker"
 			order="3502"
-			description="Link color">rgba(255,255,255,0.45)</config>
+			description="Link color">rgba(255,255,255,0.5)</config>
 	<config group="template_jobs"
 			name="footer_link_hover"
 			type="colorpicker"
 			order="3503"
-			description="Link hover color">rgba(255,255,255,0.5)</config>
+			description="Link hover color">rgba(255,255,255,0.55)</config>
 	<config group="template_jobs"
 			name="footer_link_active"
 			type="colorpicker"
 			order="3504"
-			description="Link active color">rgba(255,255,255,0.7)</config>
+			description="Link active color">rgba(255,255,255,0.6)</config>
 
 	<config group="template_jobs" 
 			type="divider"
@@ -306,9 +306,11 @@
 	</blocks>
 
 	<phrases>
-		<phrase category="frontend" key="login">Log in</phrase>
-		<phrase category="frontend" key="register">Sign up</phrase>
-		<phrase category="frontend" key="back_to_top">Back to top</phrase>
-		<phrase category="frontend" key="admin_dashboard">Admin Dashboard</phrase>
+		<phrase category="frontend" key="counter_caption"><![CDATA[Find your next <span>dream job</span>]]></phrase>
+		<phrase category="frontend" key="counter_content"><![CDATA[we’ve got <u>:counter vacancies</u>]]></phrase>
+		<phrase category="frontend" key="category">Category</phrase>
+		<phrase category="frontend" key="location">Location</phrase>
+		<phrase category="frontend" key="keywords">Keywords</phrase>
+		<phrase category="frontend" key="find">Find</phrase>
 	</phrases>
 </template>

@@ -83,56 +83,87 @@
 	</head>
 
 	<body class="page-{$core.page.name}">
-		<div class="inventory">
-			<div class="container">
-				{if $core.config.website_social}
-					<ul class="nav-inventory nav-inventory-social pull-left hidden-xs">
-						{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter"></span></a></li>{/if}
-						{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook"></span></a></li>{/if}
-						{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus"></span></a></li>{/if}
-						{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin"></span></a></li>{/if}
-					</ul>
-				{/if}
-				{include 'language-selector.tpl'}
-				{ia_blocks block='inventory'}
+		<header class="header">
+			<div class="inventory">
+				<div class="container">
+					{if $core.config.website_social}
+						<ul class="nav-inventory nav-inventory-social pull-right hidden-xs">
+							{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter-square"></span></a></li>{/if}
+							{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook-square"></span></a></li>{/if}
+							{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus-square"></span></a></li>{/if}
+							{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin-square"></span></a></li>{/if}
+						</ul>
+					{/if}
+					{include 'language-selector.tpl'}
+					{ia_blocks block='inventory'}
+				</div>
 			</div>
-		</div>
 
-		<nav class="navbar navbar-default">
 			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand{if !$core.config.enable_text_logo} navbar-brand--img{/if}" href="{$smarty.const.IA_URL}">
-						{if $core.config.enable_text_logo}
-							{$core.config.logo_text}
-						{else}
-							{if !empty($core.config.site_logo)}
-								<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
+				{*{if isset($iaBlocks.teaser)}*}
+					<div class="teaser">
+						<!-- will be as a block -->
+						<div class="teaser__caption">
+							{lang key='counter_caption'}
+						</div>
+						<div class="teaser__content">
+							{lang key='counter_content' counter=274}
+						</div>
+						{*{ia_blocks block='teaser'}*}
+					</div>
+				{*{/if}*}
+
+				<div class="quicksearch js-quicksearch hidden-xs">
+					<form action="{$smarty.const.IA_URL}search/">
+						<a href="#" class="quicksearch__field-category">
+							{lang key='category'}
+							<i class="icon-arrow-down"></i>
+						</a>
+
+						<input type="text" name="location" class="quicksearch__field-location" placeholder="{lang key='location'}">
+						<input type="text" name="keywords" class="quicksearch__field-keywords" placeholder="{lang key='keywords'}">
+						<input type="hidden" name="category">
+
+						<button type="submit" class="quicksearch__submit">
+							<i class="icon-search"></i>
+							{lang key='find'}
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand{if !$core.config.enable_text_logo} navbar-brand--img{/if}" href="{$smarty.const.IA_URL}">
+							{if $core.config.enable_text_logo}
+								{$core.config.logo_text}
 							{else}
-								<img src="{$img}logo.png" alt="{$core.config.site}">
+								{if !empty($core.config.site_logo)}
+									<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
+								{else}
+									<img src="{$img}logo.png" alt="{$core.config.site}">
+								{/if}
 							{/if}
-						{/if}
-					</a>
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+						{ia_blocks block='account'}
+						{ia_blocks block='mainmenu'}
+					</div>
 				</div>
-
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					{ia_blocks block='account'}
-					{ia_blocks block='mainmenu'}
-				</div>
-			</div>
-		</nav>
+			</nav>
+		</header>
 
 		{if isset($smarty.get.elements)}
 			{include 'page.elements.tpl'}
 		{else}
-		<header class="header">
-			{ia_blocks block='teaser'}
-		</header>
 
 		{ia_hooker name='smartyFrontBeforeBreadcrumb'}
 
