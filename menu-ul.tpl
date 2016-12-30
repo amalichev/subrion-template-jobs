@@ -41,7 +41,7 @@
 			<!-- MORE menu dropdown -->
 			{if isset($dropdown) && $menu.level < 1}
 				<li class="dropdown dropdown-more">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">{lang key='more'} <span class="caret"></span></a>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">{lang key='more'} <i class="icon-arrow-down"></i></a>
 
 					<ul class="dropdown-menu">
 						{foreach $dropdown as $menu}

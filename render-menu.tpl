@@ -9,7 +9,7 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					{*printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email*}
 					{$member.fullname|default:$member.username}
-					<i class="fa fa-angle-down"></i>
+					<i class="icon-arrow-down"></i>
 				</a>
 				{ia_hooker name='smartyFrontInsideAccountBox'}
 				{ia_menu menus=$menu.contents class='dropdown-menu' loginout=true}

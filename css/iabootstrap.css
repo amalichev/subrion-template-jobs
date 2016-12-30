@@ -321,7 +321,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #626a77;
-  background-color: #ffffff;
+  background-color: #f5f9ff;
 }
 input,
 button,
@@ -1473,7 +1473,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #ffffff;
+  background-color: #f5f9ff;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3308,7 +3308,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #ffffff;
+  background-color: #f5f9ff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3354,7 +3354,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #f5f9ff;
   }
 }
 .nav-pills > li {
@@ -3437,7 +3437,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #f5f9ff;
   }
 }
 .tab-content > .tab-pane {
@@ -9922,7 +9922,7 @@ fieldset[disabled] .btn-danger-outline.active {
   transition: all .3s ease;
 }
 body {
-  background: #ffffff;
+  background: #f5f9ff;
 }
 @media (max-width: 768px) {
   .row [class*="col-md"] + [class*="col-md"] {
@@ -9957,6 +9957,9 @@ body {
     float: none;
     margin-top: 0;
   }
+}
+.landing {
+  padding: 100px 0;
 }
 .page-header {
   margin-top: 0;
@@ -10223,13 +10226,12 @@ body {
   background-color: #565e69;
 }
 .navbar-default {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  margin: 0;
+  margin: -80px 0 0;
   border-radius: 0;
   border: 0 none;
-  background-color: #fff;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 68px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 68px rgba(0, 0, 0, 0.15);
 }
 .navbar-sticky {
   -webkit-transition: all 0.15s ease-in-out;
@@ -10243,8 +10245,7 @@ body {
   top: 0;
   z-index: 1000;
   width: 100%;
-  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+  margin-top: 0;
 }
 .navbar-sticky .navbar-collapse {
   max-height: 320px;
@@ -10279,96 +10280,9 @@ body {
     margin: 0 -15px;
   }
   .navbar-nav li > a {
+    font-family: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-bottom: 1px solid #eee;
   }
-}
-.search-navbar {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 80px;
-}
-.search-navbar.pull-right {
-  margin-left: 30px;
-  margin-right: -15px;
-}
-.search-navbar__toggle {
-  line-height: 20px;
-  height: 20px;
-  width: 20px;
-  border: 0 none;
-  background: none;
-  padding: 0;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  color: #626a77;
-  font-size: 20px;
-}
-.search-navbar__toggle:focus {
-  outline: 0 none;
-}
-.search-navbar__toggle:hover {
-  color: rgba(98, 106, 119, 0.8);
-}
-.search-navbar .input-group {
-  position: absolute;
-  z-index: 1002;
-  width: 320px;
-  top: 100%;
-  right: 0;
-  background: #fff;
-  padding: 16px;
-  margin-top: 1px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-}
-.search-navbar .input-group.is-visible {
-  opacity: 1;
-  visibility: visible;
-  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-}
-.search-navbar .input-group input {
-  background: #f2f2f2;
-  border-color: #f2f2f2;
-}
-@media (max-width: 768px) {
-  .search-navbar {
-    height: auto;
-  }
-  .search-navbar.pull-right {
-    float: none !important;
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  .search-navbar__toggle {
-    display: none;
-  }
-  .search-navbar .input-group {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    width: auto;
-    padding: 10px;
-    margin-top: 0;
-    background: #f6f6f6;
-  }
-}
-.search-navbar-backdrop {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-}
-.navbar .search-navbar-backdrop {
-  z-index: 999;
 }
 .footer-blocks {
   background: #2c323b;

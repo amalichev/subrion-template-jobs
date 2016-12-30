@@ -55,7 +55,7 @@
 			name="custom_color_body_bg"
 			type="colorpicker"
 			order="3003"
-			description="Body background">#fff</config>
+			description="Body background">#f5f9ff</config>
 	<config group="template_jobs"
 			name="custom_color_text"
 			type="colorpicker"
@@ -306,6 +306,9 @@
 	</blocks>
 
 	<phrases>
+		<phrase category="frontend" key="login">Log in</phrase>
+		<phrase category="frontend" key="register">Sign up</phrase>
+		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 		<phrase category="frontend" key="counter_caption"><![CDATA[Find your next <span>dream job</span>]]></phrase>
 		<phrase category="frontend" key="counter_content"><![CDATA[we’ve got <u>:counter vacancies</u>]]></phrase>
 		<phrase category="frontend" key="category">Category</phrase>
