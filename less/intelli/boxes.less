@@ -8,6 +8,7 @@
   &--border {
     padding: 20px;
     border: 1px solid @border-color;
+    background-color: #fff;
   }
 
   &--featured {
@@ -28,14 +29,15 @@
   }
 
   &__caption {
-    .font-normalize(18px, 0);
+    .font-normalize(20px, 0);
     color: @box-caption-color;
+    font-family: @font-family-varela-round;
     position: relative;
   }
 
   &__content {
     color: @box-content-color;
-    padding-top: @vertical-rhythm/2;
+    padding-top: @vertical-rhythm;
 
     > *:last-child {
       margin-bottom: 0;

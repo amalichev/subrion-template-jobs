@@ -142,57 +142,32 @@
 
 		{include 'breadcrumb.tpl'}
 
+		{if isset($iaBlocks.verytop)}
+			<div class="verytop">
+				<div class="container">{ia_blocks block='verytop'}</div>
+			</div>
+		{/if}
+
 		{if $core.config.enable_landing && 'index' == $core.page.name}
 			<div class="landing">
 				{ia_blocks block='landing'}
-				<div class="container">
-					<h1>Lorem ipsum dolor sit amet</h1>
-					<br>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eum, accusantium aliquam numquam accusamus, aspernatur quos voluptas a cum odio quam excepturi illum, doloribus quo praesentium tempora ab cupiditate nostrum!</p>
-					<p>Obcaecati officia voluptates enim error repellat sit quia corrupti magni molestiae laboriosam fugit, culpa aperiam sapiente ipsam eum perspiciatis possimus! Vel veritatis necessitatibus soluta laudantium est voluptatum ab dolorum aliquam.</p>
-					<p>Dolorum rerum et dolores temporibus, inventore, placeat illum eligendi eius consequuntur saepe itaque ex dolore similique. Facilis, enim sed distinctio dignissimos error illum at eum est placeat, ad eos omnis.</p>
-					<p>Eius expedita earum quidem fuga sapiente ad dolorem similique nesciunt numquam quis, cupiditate doloremque officiis impedit ab et voluptate, quaerat, ut aliquam pariatur quos nam nisi enim? Fugiat, eveniet, consequatur?</p>
-					<p>Necessitatibus cumque et consequuntur consequatur fugit repudiandae ipsum culpa minima modi earum repellendus ipsam cum excepturi voluptate nobis sequi saepe, voluptates inventore numquam ea laboriosam neque ad. Non, asperiores, quos.</p>
-					<p>Adipisci ad neque nostrum explicabo, repellat sit, quisquam quam facilis alias iusto soluta. Omnis recusandae laudantium eveniet voluptates fugiat inventore mollitia sapiente fuga. Illo perspiciatis placeat praesentium quia quidem mollitia.</p>
-					<p>Natus facilis ratione asperiores deleniti quo? Dolorum laborum ipsam ut dicta eligendi corporis illo, esse, ipsum quia possimus in dolore, voluptatum totam tempora qui id reprehenderit ratione reiciendis sapiente nemo!</p>
-					<p>Tenetur error culpa voluptate illo. Accusamus repellendus doloribus odit aut debitis dicta iure quaerat eos possimus quod laudantium voluptatum cumque repellat eligendi mollitia nam voluptatibus, minus sequi nulla. Harum, quam.</p>
-					<p>Similique quidem non quod, omnis qui odio veritatis pariatur aliquid quas voluptatem. Exercitationem numquam alias eum odio! Consequatur eos mollitia doloremque! Amet veritatis eaque laudantium, ex esse, cupiditate expedita libero!</p>
-					<p>Optio assumenda dolore blanditiis, cumque eveniet ad consequuntur tenetur animi ex. Obcaecati excepturi nulla, id recusandae sequi cupiditate earum cum exercitationem iusto suscipit, impedit odit, perferendis cumque quos explicabo est.</p>
-					<p>Repellat deleniti obcaecati at, eaque laudantium ipsa culpa quas illo recusandae quod, temporibus, voluptatem qui aut adipisci? Architecto harum inventore dolore fugiat illum. Expedita nisi harum, eius, hic ipsa debitis?</p>
-					<p>Delectus fugit asperiores quidem consequuntur, est, blanditiis itaque exercitationem. Debitis aliquid dicta temporibus tempora consequatur cum amet iusto quo! Nisi cupiditate, aperiam modi consequatur blanditiis soluta dolor quia iusto consequuntur.</p>
-					<p>Delectus nihil et assumenda, reprehenderit nam odit quod deserunt reiciendis nisi neque soluta fuga distinctio unde non saepe natus repudiandae ratione ut. Voluptates esse repellendus voluptatem sit, qui itaque reprehenderit!</p>
-					<p>Magni totam tempora vero veniam ea quisquam asperiores culpa molestias vitae, odit odio explicabo sunt ut error aspernatur animi corporis laudantium consectetur. Et assumenda repellendus veniam, nam necessitatibus! Enim, minus!</p>
-					<p>Amet sequi quasi ipsum sapiente quis officiis quidem porro rerum magnam assumenda corporis nesciunt, facilis, possimus incidunt unde inventore pariatur provident accusantium blanditiis praesentium temporibus illum natus architecto. Laboriosam, sunt.</p>
-					<p>Provident ipsam pariatur quos obcaecati error ad at officiis sint esse vitae nesciunt rem, itaque alias non eveniet quasi voluptatem veniam, atque, harum saepe assumenda fugiat sit! Impedit, perspiciatis, architecto!</p>
-					<p>Natus dolore inventore, quidem dolor numquam, eos odit doloribus accusantium itaque, ut vitae enim quam odio veritatis. Aut velit ducimus ipsa, quod voluptatibus expedita esse labore asperiores deserunt dolores in.</p>
-					<p>Doloremque est architecto eum hic sunt repellat velit animi veritatis. Laboriosam voluptatem, ab! Quia laboriosam, debitis esse, nisi totam nam atque, assumenda necessitatibus minus inventore temporibus soluta corrupti et, quis.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eum, accusantium aliquam numquam accusamus, aspernatur quos voluptas a cum odio quam excepturi illum, doloribus quo praesentium tempora ab cupiditate nostrum!</p>
-					<p>Obcaecati officia voluptates enim error repellat sit quia corrupti magni molestiae laboriosam fugit, culpa aperiam sapiente ipsam eum perspiciatis possimus! Vel veritatis necessitatibus soluta laudantium est voluptatum ab dolorum aliquam.</p>
-					<p>Dolorum rerum et dolores temporibus, inventore, placeat illum eligendi eius consequuntur saepe itaque ex dolore similique. Facilis, enim sed distinctio dignissimos error illum at eum est placeat, ad eos omnis.</p>
-					<p>Eius expedita earum quidem fuga sapiente ad dolorem similique nesciunt numquam quis, cupiditate doloremque officiis impedit ab et voluptate, quaerat, ut aliquam pariatur quos nam nisi enim? Fugiat, eveniet, consequatur?</p>
-					<p>Necessitatibus cumque et consequuntur consequatur fugit repudiandae ipsum culpa minima modi earum repellendus ipsam cum excepturi voluptate nobis sequi saepe, voluptates inventore numquam ea laboriosam neque ad. Non, asperiores, quos.</p>
-					<p>Adipisci ad neque nostrum explicabo, repellat sit, quisquam quam facilis alias iusto soluta. Omnis recusandae laudantium eveniet voluptates fugiat inventore mollitia sapiente fuga. Illo perspiciatis placeat praesentium quia quidem mollitia.</p>
-					<p>Natus facilis ratione asperiores deleniti quo? Dolorum laborum ipsam ut dicta eligendi corporis illo, esse, ipsum quia possimus in dolore, voluptatum totam tempora qui id reprehenderit ratione reiciendis sapiente nemo!</p>
-					<p>Tenetur error culpa voluptate illo. Accusamus repellendus doloribus odit aut debitis dicta iure quaerat eos possimus quod laudantium voluptatum cumque repellat eligendi mollitia nam voluptatibus, minus sequi nulla. Harum, quam.</p>
-					<p>Similique quidem non quod, omnis qui odio veritatis pariatur aliquid quas voluptatem. Exercitationem numquam alias eum odio! Consequatur eos mollitia doloremque! Amet veritatis eaque laudantium, ex esse, cupiditate expedita libero!</p>
-					<p>Optio assumenda dolore blanditiis, cumque eveniet ad consequuntur tenetur animi ex. Obcaecati excepturi nulla, id recusandae sequi cupiditate earum cum exercitationem iusto suscipit, impedit odit, perferendis cumque quos explicabo est.</p>
-					<p>Repellat deleniti obcaecati at, eaque laudantium ipsa culpa quas illo recusandae quod, temporibus, voluptatem qui aut adipisci? Architecto harum inventore dolore fugiat illum. Expedita nisi harum, eius, hic ipsa debitis?</p>
-					<p>Delectus fugit asperiores quidem consequuntur, est, blanditiis itaque exercitationem. Debitis aliquid dicta temporibus tempora consequatur cum amet iusto quo! Nisi cupiditate, aperiam modi consequatur blanditiis soluta dolor quia iusto consequuntur.</p>
-					<p>Delectus nihil et assumenda, reprehenderit nam odit quod deserunt reiciendis nisi neque soluta fuga distinctio unde non saepe natus repudiandae ratione ut. Voluptates esse repellendus voluptatem sit, qui itaque reprehenderit!</p>
-					<p>Magni totam tempora vero veniam ea quisquam asperiores culpa molestias vitae, odit odio explicabo sunt ut error aspernatur animi corporis laudantium consectetur. Et assumenda repellendus veniam, nam necessitatibus! Enim, minus!</p>
-					<p>Amet sequi quasi ipsum sapiente quis officiis quidem porro rerum magnam assumenda corporis nesciunt, facilis, possimus incidunt unde inventore pariatur provident accusantium blanditiis praesentium temporibus illum natus architecto. Laboriosam, sunt.</p>
-					<p>Provident ipsam pariatur quos obcaecati error ad at officiis sint esse vitae nesciunt rem, itaque alias non eveniet quasi voluptatem veniam, atque, harum saepe assumenda fugiat sit! Impedit, perspiciatis, architecto!</p>
-					<p>Natus dolore inventore, quidem dolor numquam, eos odit doloribus accusantium itaque, ut vitae enim quam odio veritatis. Aut velit ducimus ipsa, quod voluptatibus expedita esse labore asperiores deserunt dolores in.</p>
-					<p>Doloremque est architecto eum hic sunt repellat velit animi veritatis. Laboriosam voluptatem, ab! Quia laboriosam, debitis esse, nisi totam nam atque, assumenda necessitatibus minus inventore temporibus soluta corrupti et, quis.</p>
-				</div>
 			</div>
-		{else}
-			{if isset($iaBlocks.verytop)}
-				<div class="verytop">
-					<div class="container">{ia_blocks block='verytop'}</div>
+
+			{if isset($iaBlocks.companies) || isset($iaBlocks.popular_categories)}
+				<div class="brief-blocks">
+					<div class="container">
+						<div class="row">
+							<div class="{width section='brief-blocks' position='companies' tag='col-md-'}">
+								{ia_blocks block='companies'}
+							</div>
+							<div class="{width section='brief-blocks' position='popular_categories' tag='col-md-'}">
+								{ia_blocks block='popular_categories'}
+							</div>
+						</div>
+					</div>
 				</div>
 			{/if}
-
+		{else}
 			<div class="content">
 				<div class="container">
 					{if in_array($core.page.name, array('login', 'member_registration'))}
@@ -233,7 +208,9 @@
 							<div class="{width section='content' position='center' tag='col-md-'}">
 								<div class="content__wrap">
 
-									{ia_blocks block='top'}
+									{if isset($iaBlocks.bottom)}
+										{ia_blocks block='top'}
+									{/if}
 
 									<div class="content__header">
 										<h1>{$core.page.title}</h1>
@@ -263,7 +240,9 @@
 
 									{ia_hooker name='smartyFrontAfterMainContent'}
 
-									{ia_blocks block='bottom'}
+									{if isset($iaBlocks.bottom)}
+										{ia_blocks block='bottom'}
+									{/if}
 								</div>
 							</div>
 							<div class="{width section='content' position='right' tag='col-md-'} aside">
@@ -273,12 +252,12 @@
 					{/if}
 				</div>
 			</div>
+		{/if}
 
-			{if isset($iaBlocks.verybottom)}
-				<div class="verybottom">
-					<div class="container">{ia_blocks block='verybottom'}</div>
-				</div>
-			{/if}
+		{if isset($iaBlocks.verybottom)}
+			<div class="verybottom">
+				<div class="container">{ia_blocks block='verybottom'}</div>
+			</div>
 		{/if}
 
 		{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}

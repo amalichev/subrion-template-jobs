@@ -100,7 +100,8 @@
 
 // Common styles
 .btn {
-  // Remove the gradient for the pressed/active state
+  text-transform: uppercase;
+
   &:active,
   &.active {
     background-image: none;
@@ -108,12 +109,12 @@
 }
 
 // Apply the mixin to the buttons
-.btn-default { .btn-styles(@btn-default-bg); border-color: #ccc; }
-.btn-primary { .btn-styles(@btn-primary-bg); }
-.btn-success { .btn-styles(@btn-success-bg); }
-.btn-info    { .btn-styles(@btn-info-bg); }
-.btn-warning { .btn-styles(@btn-warning-bg); }
-.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-default { .btn-styles(@btn-default-bg); border-color: #ccc; font-weight: bold }
+.btn-primary { .btn-styles(@btn-primary-bg); font-weight: bold }
+.btn-success { .btn-styles(@btn-success-bg); font-weight: bold }
+.btn-info    { .btn-styles(@btn-info-bg); font-weight: bold }
+.btn-warning { .btn-styles(@btn-warning-bg); font-weight: bold }
+.btn-danger  { .btn-styles(@btn-danger-bg); font-weight: bold }
 
 .btn-primary-outline { .btn-styles-outline(@btn-primary-bg); }
 .btn-success-outline { .btn-styles-outline(@btn-success-bg); }
@@ -249,7 +250,7 @@
 // --------------------------------------------------
 
 .well {
-  background: #f2f2f2;
+  background: #fff;
   border-radius: 0;
   border: 0 none;
   .box-shadow(none);

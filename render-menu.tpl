@@ -6,7 +6,7 @@
 	<ul class="nav navbar-nav navbar-right nav-account">
 		{if 'account' == $menu.name && $member && $core.config.members_enabled}
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle qwe" data-toggle="dropdown">
+				<a href="#" class="dropdown-toggle filled" data-toggle="dropdown">
 					<span>
 						{$member.fullname|default:$member.username}
 						<i class="icon-arrow-down"></i>
@@ -20,7 +20,7 @@
 				<a href="{$smarty.const.IA_URL}login/">{lang key='login'}</a>
 			</li>
 			<li{if 'member_registration' == $core.page.name} class="active"{/if}>
-				<a href="{$smarty.const.IA_URL}registration/" class="qwe"><span>{lang key='register'}</span></a>
+				<a href="{$smarty.const.IA_URL}registration/" class="filled"><span>{lang key='register'}</span></a>
 			</li>
 		{/if}
 	</ul>

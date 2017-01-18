@@ -1,6 +1,6 @@
 <div class="c-el-head">
 	<div class="container">
-		<h1><b>Kickstart</b> template elements</h1>
+		<h1><b>Jobs</b> template elements</h1>
 	</div>
 </div>
 

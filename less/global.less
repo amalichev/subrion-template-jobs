@@ -10,6 +10,7 @@
 }
 
 * {
+  outline: none !important;
   transition: all .3s ease;
 }
 
@@ -49,9 +50,6 @@ body {
 // --------------------------------------------------
 
 .breadcrumbs {
-  background: #f6f6f6;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding-top: 15px;
   padding-bottom: 15px;
 
@@ -102,13 +100,11 @@ body {
 }
 
 .verytop {
-  background: #f2f2f2;
-  padding: @vertical-rhythm 0;
+  background-color: #fff;
 }
 
 .content {
   padding: @vertical-rhythm*2 0;
-  background: #fff;
 
   &__header {
     .clearfix();
@@ -158,8 +154,7 @@ body {
 }
 
 .verybottom {
-  padding: @vertical-rhythm*2 0;
-  border-top: 1px solid #ddd;
+  background-color: #fff;
 }
 
 .highlight {
@@ -183,6 +178,28 @@ body {
 
       &:hover {
         background: none;
+      }
+    }
+  }
+}
+
+
+
+//
+// Tables
+// --------------------------------------------------
+
+.table {
+
+  > thead,
+  > tbody,
+  > tfoot {
+
+    > tr {
+
+      > th,
+      > td {
+        border-top: 1px solid fade(@table-border-color, 30%);
       }
     }
   }

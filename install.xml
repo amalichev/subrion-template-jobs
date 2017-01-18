@@ -27,6 +27,10 @@
 			<position width="6">center</position>
 			<position fixed="1">right</position>
 		</section>
+		<section name="brief-blocks">
+			<position width="6">companies</position>
+			<position width="6">popular_categories</position>
+		</section>
 		<section name="footer-blocks">
 			<position width="4">footer1</position>
 			<position width="4">footer2</position>
@@ -254,6 +258,8 @@
 		<block status="active" classname="box--border" position="right">common_statistics</block>
 		<block status="active" classname="box--border" position="left">filters</block>
 
+		<block position="verybottom" header="0" order="3">newsletters_subscription</block>
+
 		<block status="inactive">new_portfolio_entries</block>
 		<block status="inactive">testimonials</block>
 		<block status="inactive">blogroll</block>
@@ -284,35 +290,32 @@
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
-		<block name="top"
-			   title="Top block position"
-			   position="top"
+		<block name="companies"
+			   title="Companies"
+			   position="companies"
 			   header="1"
-			   collapsible="1"
+			   collapsible="0"
 			   sticky="0"
 			   pages="index"
 			   status="active"
-			   type="html">
-			<![CDATA[
-<p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
-<p>Ne lorem percipit efficiantur mei, ius ut simul vidisse. An vel probatus explicari appellantur. Has et comprehensam interpretaris, quo no inimicus maluisset temporibus. Ea mea quod incorrupte, brute laoreet at pri, eam antiopam honestatis efficiantur ea. Velit atomorum voluptaria ad nam, hinc aperiam accumsan ne est, ut dictas dissentias his.</p>
-			]]>
+			   order="2"
+			   filename="block.companies.tpl"
+			   type="smarty">
+			<![CDATA[]]>
 		</block>
-		<block name="bottom_block"
-			   title="Bottom block position"
-			   position="bottom"
+		<block name="popular_categories"
+			   title="Popular categories"
+			   position="popular_categories"
 			   header="1"
-			   collapsible="1"
+			   collapsible="0"
 			   sticky="0"
 			   pages="index"
 			   status="active"
-			   type="html">
-			<![CDATA[
-<p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
-<p>Ne lorem percipit efficiantur mei, ius ut simul vidisse. An vel probatus explicari appellantur. Has et comprehensam interpretaris, quo no inimicus maluisset temporibus. Ea mea quod incorrupte, brute laoreet at pri, eam antiopam honestatis efficiantur ea. Velit atomorum voluptaria ad nam, hinc aperiam accumsan ne est, ut dictas dissentias his.</p>
-			]]>
+			   order="2"
+			   filename="block.popular-categories.tpl"
+			   type="smarty">
+			<![CDATA[]]>
 		</block>
-
 		<block name="html_block1"
 			   title="HTML block #1"
 			   position="left"
@@ -336,6 +339,10 @@
 		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 		<phrase category="frontend" key="counter_caption"><![CDATA[Find your next <span>dream job</span>]]></phrase>
 		<phrase category="frontend" key="counter_content"><![CDATA[we’ve got <u>:counter vacancies</u>]]></phrase>
+		<phrase category="frontend" key="newsletters_caption">Newsletter</phrase>
+		<phrase category="frontend" key="newsletters_content">Add your car for sale and be ready to receive many calls from potential buyers!</phrase>
+		<phrase category="frontend" key="name">Name</phrase>
+		<phrase category="frontend" key="email">Email</phrase>
 		<phrase category="frontend" key="category">Category</phrase>
 		<phrase category="frontend" key="location">Location</phrase>
 		<phrase category="frontend" key="keywords">Keywords</phrase>
