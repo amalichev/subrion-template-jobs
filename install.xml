@@ -14,6 +14,7 @@
 
 		<position>inventory</position>
 		<position>teaser</position>
+		<position>quicksearch</position>
 		<position>verytop</position>
 		<position>top</position>
 		<position>bottom</position>
@@ -27,10 +28,9 @@
 			<position fixed="1">right</position>
 		</section>
 		<section name="footer-blocks">
-			<position width="3">footer1</position>
-			<position width="3">footer2</position>
-			<position width="3">footer3</position>
-			<position width="3">footer4</position>
+			<position width="4">footer1</position>
+			<position width="4">footer2</position>
+			<position width="4">footer3</position>
 		</section>
 	</layout>
 
@@ -251,14 +251,39 @@
 	<changeset>
 		<menu position="account" status="active">account</menu>
 
-		<block status="active" classname="section section-portfolio" position="landing" order="203">new_portfolio_entries</block>
-		<block status="active" classname="section section-testimonials" position="landing" order="204">testimonials</block>
-		<block status="active" classname="section section-blog" position="landing" order="205">blogroll</block>
 		<block status="active" classname="box--border" position="right">common_statistics</block>
 		<block status="active" classname="box--border" position="left">filters</block>
+
+		<block status="inactive">new_portfolio_entries</block>
+		<block status="inactive">testimonials</block>
+		<block status="inactive">blogroll</block>
 	</changeset>
 
 	<blocks>
+		<block name="teaser"
+			   title="Teaser block"
+			   position="teaser"
+			   header="0"
+			   collapsible="0"
+			   sticky="1"
+			   status="active"
+			   order="1"
+			   filename="block.teaser.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
+		<block name="quicksearch"
+			   title="Quick search"
+			   position="teaser"
+			   header="0"
+			   collapsible="0"
+			   sticky="1"
+			   status="active"
+			   order="2"
+			   filename="block.quicksearch.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
 		<block name="top"
 			   title="Top block position"
 			   position="top"

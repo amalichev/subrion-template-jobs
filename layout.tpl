@@ -100,36 +100,9 @@
 			</div>
 
 			<div class="container">
-				{*{if isset($iaBlocks.teaser)}*}
-					<div class="teaser">
-						<!-- will be as a block -->
-						<div class="teaser__caption">
-							{lang key='counter_caption'}
-						</div>
-						<div class="teaser__content">
-							{lang key='counter_content' counter=274}
-						</div>
-						{*{ia_blocks block='teaser'}*}
-					</div>
-				{*{/if}*}
-
-				<div class="quicksearch js-quicksearch hidden-xs">
-					<form action="{$smarty.const.IA_URL}search/">
-						<a href="#" class="quicksearch__field-category">
-							{lang key='category'}
-							<i class="icon-arrow-down"></i>
-						</a>
-
-						<input type="text" name="location" class="quicksearch__field-location" placeholder="{lang key='location'}">
-						<input type="text" name="keywords" class="quicksearch__field-keywords" placeholder="{lang key='keywords'}">
-						<input type="hidden" name="category">
-
-						<button type="submit" class="quicksearch__submit">
-							<i class="icon-search"></i>
-							{lang key='find'}
-						</button>
-					</form>
-				</div>
+				{if isset($iaBlocks.teaser)}
+					{ia_blocks block='teaser'}
+				{/if}
 			</div>
 		</header>
 
@@ -315,7 +288,6 @@
 						<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
 						<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
 						<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
-						<div class="{width section='footer-blocks' position='footer4' tag='col-md-'}">{ia_blocks block='footer4'}</div>
 					</div>
 				</div>
 			</div>

@@ -3,24 +3,27 @@
 {elseif 'inventory' == $position}
 	{ia_menu menus=$menu.contents class="nav-inventory hidden-sm hidden-xs pull-left {$menu.classname}"}
 {elseif 'account' == $position}
-	{if 'account' == $menu.name && $member && $core.config.members_enabled}
-		<ul class="nav navbar-nav navbar-right nav-account">
+	<ul class="nav navbar-nav navbar-right nav-account">
+		{if 'account' == $menu.name && $member && $core.config.members_enabled}
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					{*printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email*}
-					{$member.fullname|default:$member.username}
-					<i class="icon-arrow-down"></i>
+				<a href="#" class="dropdown-toggle qwe" data-toggle="dropdown">
+					<span>
+						{$member.fullname|default:$member.username}
+						<i class="icon-arrow-down"></i>
+					</span>
 				</a>
 				{ia_hooker name='smartyFrontInsideAccountBox'}
 				{ia_menu menus=$menu.contents class='dropdown-menu' loginout=true}
 			</li>
-		</ul>
-	{else}
-		<ul class="nav navbar-nav navbar-right">
-			<li{if 'login' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}login/">{lang key='login'}</a></li>
-			<li{if 'member_registration' == $core.page.name} class="active"{/if}><a href="{$smarty.const.IA_URL}registration/">{lang key='register'}</a></li>
-		</ul>
-	{/if}
+		{else}
+			<li{if 'login' == $core.page.name} class="active"{/if}>
+				<a href="{$smarty.const.IA_URL}login/">{lang key='login'}</a>
+			</li>
+			<li{if 'member_registration' == $core.page.name} class="active"{/if}>
+				<a href="{$smarty.const.IA_URL}registration/" class="qwe"><span>{lang key='register'}</span></a>
+			</li>
+		{/if}
+	</ul>
 {elseif in_array($position, array('left', 'right', 'user1', 'user2', 'top'))}
 	{if !empty($menu.contents[0]) && 'account' != $menu.name}
 		{ia_block header=$menu.header title=$menu.title movable=true id=$menu.id name=$menu.name collapsible=$menu.collapsible classname=$menu.classname}

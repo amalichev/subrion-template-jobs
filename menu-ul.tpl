@@ -22,7 +22,7 @@
 							{if (isset($data[$menu.el_id]) || isset($menu_children)) && $menu.level == 0  && $position != 'left'}data-toggle="dropdown"{/if}
 						>
 							{$menu.text}
-							{if (isset($data[$menu.el_id]) || isset($menu_children)) && $menu.level == 0  && $position != 'left'}<span class="caret"></span>{/if}
+							{if (isset($data[$menu.el_id]) || isset($menu_children)) && $menu.level == 0  && $position != 'left'}<i class="icon-arrow-down"></i>{/if}
 						</a>
 						{if isset($data[$menu.el_id])}
 							{if in_array($position, array('inventory', 'right', 'copyright'))}
