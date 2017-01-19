@@ -4,6 +4,6 @@
 	</div>
 
 	<div class="teaser__content">
-		{lang key='counter_content' counter=274}
+		{lang key='counter_content' count=274}
 	</div>
 </div>

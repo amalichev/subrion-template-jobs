@@ -1,20 +1,27 @@
 
 //
-// Footer blocks
+// Footer
 // --------------------------------------------------
 
-.footer-blocks {
-  background: lighten(@brand-dark, 2%);
-  padding: @sections-v-pad/2 0;
+.footer {
+  color: @footer-text-color;
+  background: @brand-dark;
+  padding: @footer-padding-vertical @footer-padding-horizontal;
+
+  @media (max-width: @screen-md) {
+    padding-top: @footer-padding-vertical/2.5;
+    padding-bottom: @footer-padding-vertical/2.5;
+  }
 
   .box__caption {
+    margin-bottom: 7px;
     color: #fff;
     text-transform: uppercase;
-    font-weight: bold;
+    font-size: inherit;
   }
 
   .box__content {
-    color: fade(#fff, 70%);
+    margin: 0;
   }
 
   .list-unstyled {
@@ -44,63 +51,80 @@
 
 
 //
-// Footer
+// Footer navs
 // --------------------------------------------------
 
-.footer {
-  background: @footer-bg;
+.nav-footer {
+
+  .nav-menu-header,
+  .nav-menu > li > a {
+    margin-bottom: 7px;
+    font-size: 16px;
+  }
+
+  .nav-menu-header {
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+
+      > a {
+        display: block;
+        color: @footer-link-color;
+
+        &:hover,
+        &:focus {
+          color: @footer-link-hover-color;
+          text-decoration: none;
+        }
+      }
+
+      //&.active > a,
+      //&.active > a:focus,
+      //&.active > a:hover {
+      //  color: @footer-link-active-color;
+      //}
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+
+      > li {
+
+        > a {
+          line-height: @line-height-computed;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 
 
 
 //
-// Footer navs
+// Footer brand
 // --------------------------------------------------
 
-.nav-footer {
-  margin: 0 20px 0 0;
-  padding: 0;
-  list-style-type: none;
+.footer-brand {
   float: left;
-  .clearfix();
+  font-size: @brand-font-size;
+  font-weight: bold;
+  color: @brand-primary !important;
+  text-transform: uppercase;
 
-  > li {
-    float: left;
-    margin: 0 10px 0 0;
-
-    > a {
-      &,
-      &:focus {
-        display: block;
-        line-height: @footer-height;
-        color: @footer-link-color;
-        font-size: 12px;
-        text-decoration: none;
-      }
-
-      &:hover {
-        color: @footer-link-hover-color;
-        text-decoration: underline;
-      }
-    }
-
-    &.active > a,
-    &.active > a:focus,
-    &.active > a:hover {
-      color: @footer-link-active-color;
-    }
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 
-  @media (max-width: @grid-float-breakpoint) {
-    float: none;
-
-    > li {
-
-      > a {
-        line-height: @line-height-computed;
-        font-size: 14px;
-      }
-    }
+  img {
+    width: 100%;
   }
 }
 
@@ -111,33 +135,33 @@
 // --------------------------------------------------
 
 .nav-footer-social {
-  .clearfix();
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
 
   > li {
-    margin: 0;
+    display: inline-block;
+    margin: 0 0 20px 20px;
 
     > a {
-      padding: 0 15px;
+      display: block;
       color: @footer-social-link-color;
+      font-size: 30px;
+
+      &:hover,
+      &:focus {
+        color: @footer-social-link-hover-color;
+      }
     }
   }
 
-  @media (max-width: @grid-float-breakpoint) {
-    margin-bottom: 20px;
-    margin-top: 20px;
+  @media (max-width: @screen-md) {
+    text-align: left;
 
     > li {
-      margin-right: 10px;
-
-      > a {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        background: lighten(@footer-bg, 10%);
-        padding: 0;
-        border-radius: 3px;
-      }
+      margin-left: 0;
+      margin-right: 20px;
     }
   }
 }
@@ -150,9 +174,7 @@
 
 .copyright {
   margin: 0;
-  line-height: @footer-height;
-  color: @footer-text-color;
-  float: right;
+  line-height: 16px;
 
   a {
     &,
@@ -181,7 +203,8 @@
   right: 30px;
   bottom: 40px;
   border: 0 none;
-  background: darken(@brand-dark, 3%);
+  background: @brand-dark;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -199,7 +222,7 @@
   }
 
   &:hover {
-    background: darken(@brand-dark, 1%);
+    background: @brand-primary;
     margin-bottom: 3px;
   }
 

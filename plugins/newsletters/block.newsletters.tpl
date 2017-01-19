@@ -1,7 +1,7 @@
 <div class="newsletters">
 	<div class="row">
 		<div class="col-md-6">
-			<h2>{lang key='newsletters_caption'}</h2>
+			<h4>{lang key='newsletters_caption'}</h4>
 			<p>{lang key='newsletters_content'}</p>
 		</div>
 
@@ -20,10 +20,10 @@
 					</div>
 				{/if}
 				<div class="col-md-{$column}">
-					<input type="text" id="newsletters-email" placeholder="{lang key='email'}" class="form-control">
+					<input type="text" id="newsletters-email" placeholder="{if $core.config.newsletters_block_fullname}{lang key='email'}{else}{lang key='type_your_email'}{/if}" class="form-control">
 				</div>
 				<div class="col-md-4">
-					<button type="button" class="btn btn-primary btn-block" id="newsletters-subscribe">{lang key="subscribe"}</button>
+					<button type="button" class="btn btn-primary btn-block btn-rounded" id="newsletters-subscribe">{lang key="subscribe"}</button>
 				</div>
 			</div>
 		</div>

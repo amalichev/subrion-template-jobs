@@ -1,3 +1,4 @@
+@box-companies-item-height: 95px;
 
 //
 // Brief blocks
@@ -7,8 +8,8 @@
   padding: 80px 0 40px;
   background-color: #fff;
 
-  [class*="col-md"] {
-    margin-bottom: 40px;
+  &__item {
+    margin-bottom: 70px;
   }
 }
 
@@ -18,8 +19,94 @@
 // Companies
 // --------------------------------------------------
 
-.companies {
+.box-companies {
 
+  &__item {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    border: 1px solid #f7f7f8;
+    background-color: #f7f7f8;
+
+    &,
+    &:hover,
+    &:focus {
+      color: @text-color;
+      text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+      background-color: #fff;
+    }
+
+    span {
+      display: block;
+    }
+
+    &--add {
+      height: @box-companies-item-height;
+      line-height: @box-companies-item-height;
+      font-size: 18px;
+      text-align: center;
+      background-color: #fff;
+
+      &,
+      &:hover,
+      &:focus {
+        color: fade(@text-color, 50%);
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: #f7f7f8;
+      }
+
+      [class*="icon"] {
+        position: relative;
+        margin-right: 10px;
+        color: fade(@text-color, 10%);
+        top: 8px;
+        font-size: 35px;
+      }
+    }
+  }
+
+  &__image {
+
+    img {
+      width: 100%;
+      max-width: @box-companies-item-height;
+      height: auto;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    width: 100%;
+    padding: 0 20px 0 120px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &__title {
+      margin-top: 20px;
+      .font-normalize(18px);
+    }
+
+    &__positions {
+      color: fade(@text-color, 50%);
+    }
+  }
+
+  &__more {
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 
@@ -28,6 +115,9 @@
 // Popular categories
 // --------------------------------------------------
 
-.popular-categories {
+.box-popular-categories {
 
+  &__title {
+
+  }
 }

@@ -11,7 +11,7 @@
 
 * {
   outline: none !important;
-  transition: all .3s ease;
+  .transition(all .3s ease);
 }
 
 body {
@@ -25,6 +25,10 @@ body {
       margin-top: 30px;
     }
   }
+}
+
+[class*="col-md"] {
+  .clearfix;
 }
 
 

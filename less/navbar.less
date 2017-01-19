@@ -54,8 +54,9 @@
   padding-bottom: 0;
   height: @navbar-height;
   line-height: @navbar-height;
+  font-size: @brand-font-size;
   font-weight: bold;
-  color: @brand-dark !important;
+  color: @brand-primary !important;
   text-transform: uppercase;
 
   > img {
@@ -97,10 +98,15 @@
   @media (min-width: @grid-float-breakpoint) {
 
     &.navbar-right {
-      margin-left: 120px;
+      margin-left: 30px;
     }
 
     &.nav-account {
+      margin-left: 120px;
+
+      @media (max-width: @screen-lg) {
+        margin-left: 30px;
+      }
 
       > li {
 
@@ -155,7 +161,7 @@
       > a {
         font-family: @font-family-nato-sans;
         text-transform: uppercase;
-        padding: 0 14px;
+        padding: 0 15px;
         margin-top: @navbar-padding-vertical;
         margin-bottom: @navbar-padding-vertical;
       }
@@ -181,6 +187,19 @@
           }
         }
       }
+    }
+  }
+
+  &.nav-main {
+
+    @media (max-width: @screen-md) {
+      float: left !important;
+      margin-left: -30px;
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      float: none !important;
+      margin-left: -15px;
     }
   }
 }

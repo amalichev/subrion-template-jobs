@@ -4,7 +4,7 @@
 	<summary>Template for Subrion Jobs Script</summary>
 	<author>Artem Malichev</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.1.0</version>
+	<version>1.0.0</version>
 	<date>2017-01-01</date>
 	<compatibility>4.0</compatibility>
 
@@ -19,6 +19,7 @@
 		<position>top</position>
 		<position>bottom</position>
 		<position>verybottom</position>
+		<position>call_to_action</position>
 		<position>copyright</position>
 		<position>landing</position>
 
@@ -50,35 +51,47 @@
 			values="1,0"
 			description="Enable landing page">1</config>
 	<config group="template_jobs"
-			name="custom_colors"
+			name="enable_text_logo"
 			type="radio"
 			order="3002"
+			values="1,0"
+			description="Enable Logo text">0</config>
+	<config group="template_jobs"
+			name="logo_text"
+			type="text"
+			order="3003"
+			show="enable_text_logo|1"
+			description="Logo text">Dream Jobs</config>
+	<config group="template_jobs"
+			name="custom_colors"
+			type="radio"
+			order="3004"
 			values="1,0"
 			description="Enable custom colors and backgrounds">0</config>
 	<config group="template_jobs"
 			name="custom_color_body_bg"
 			type="colorpicker"
-			order="3003"
+			order="3005"
 			description="Body background">#f5f9ff</config>
 	<config group="template_jobs"
 			name="custom_color_text"
 			type="colorpicker"
-			order="3004"
+			order="3006"
 			description="Text color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_headings"
 			type="colorpicker"
-			order="3005"
+			order="3007"
 			description="Headings color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_link"
 			type="colorpicker"
-			order="3006"
+			order="3008"
 			description="Link color">#ffaa89</config>
 	<config group="template_jobs"
 			name="custom_color_link_hover"
 			type="colorpicker"
-			order="3007"
+			order="3009"
 			description="Link hover color">#ff733c</config>
 
 	<config group="template_jobs" 
@@ -114,36 +127,24 @@
 			description="Max number of items in Main Menu"
 			order="3201">5</config>
 	<config group="template_jobs"
-			name="enable_text_logo"
-			type="radio"
-			order="3202"
-			values="1,0"
-			description="Enable Logo text">0</config>
-	<config group="template_jobs"
-			name="logo_text"
-			type="text"
-			order="3203"
-			show="enable_text_logo|1"
-			description="Logo text">Dream Jobs</config>
-	<config group="template_jobs"
 			name="custom_color_navbar_bg"
 			type="colorpicker"
-			order="3204"
+			order="3202"
 			description="Background">#ffffff</config>
 	<config group="template_jobs"
 			name="custom_color_navbar_link"
 			type="colorpicker"
-			order="3205"
+			order="3203"
 			description="Link color">#626a77</config>
 	<config group="template_jobs"
 			name="custom_color_navbar_link_hover"
 			type="colorpicker"
-			order="3206"
+			order="3204"
 			description="Link hover color">rgba(98,106,119,0.8)</config>
 	<config group="template_jobs"
 			name="custom_color_navbar_link_active"
 			type="colorpicker"
-			order="3207"
+			order="3205"
 			description="Link active color">#ffaa89</config>
 
 	<config group="template_jobs" 
@@ -185,7 +186,7 @@
 			name="bg_call_to_action_color"
 			type="colorpicker"
 			order="3403"
-			show="bg_header_use_color|1"
+			show="bg_call_to_action_use_color|1"
 			description="Background color">#646775</config>
 
 	<config group="template_jobs" 
@@ -258,7 +259,7 @@
 		<block status="active" classname="box--border" position="right">common_statistics</block>
 		<block status="active" classname="box--border" position="left">filters</block>
 
-		<block position="verybottom" header="0" order="3">newsletters_subscription</block>
+		<block position="verybottom" header="0">newsletters_subscription</block>
 
 		<block status="inactive">new_portfolio_entries</block>
 		<block status="inactive">testimonials</block>
@@ -299,6 +300,7 @@
 			   pages="index"
 			   status="active"
 			   order="2"
+			   classname="box-companies"
 			   filename="block.companies.tpl"
 			   type="smarty">
 			<![CDATA[]]>
@@ -312,7 +314,20 @@
 			   pages="index"
 			   status="active"
 			   order="2"
+			   classname="box-popular-categories"
 			   filename="block.popular-categories.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
+		<block name="call_to_action"
+			   title="Call to Action"
+			   position="call_to_action"
+			   header="0"
+			   collapsible="0"
+			   sticky="0"
+			   pages="index"
+			   status="active"
+			   filename="block.call-to-action.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
@@ -336,16 +351,24 @@
 	<phrases>
 		<phrase category="frontend" key="login">Log in</phrase>
 		<phrase category="frontend" key="register">Sign up</phrase>
-		<phrase category="frontend" key="back_to_top">Back to top</phrase>
-		<phrase category="frontend" key="counter_caption"><![CDATA[Find your next <span>dream job</span>]]></phrase>
-		<phrase category="frontend" key="counter_content"><![CDATA[we’ve got <u>:counter vacancies</u>]]></phrase>
-		<phrase category="frontend" key="newsletters_caption">Newsletter</phrase>
-		<phrase category="frontend" key="newsletters_content">Add your car for sale and be ready to receive many calls from potential buyers!</phrase>
-		<phrase category="frontend" key="name">Name</phrase>
-		<phrase category="frontend" key="email">Email</phrase>
 		<phrase category="frontend" key="category">Category</phrase>
 		<phrase category="frontend" key="location">Location</phrase>
 		<phrase category="frontend" key="keywords">Keywords</phrase>
 		<phrase category="frontend" key="find">Find</phrase>
+		<phrase category="frontend" key="find">Apply</phrase>
+		<phrase category="frontend" key="num_positions">:count positions</phrase>
+		<phrase category="frontend" key="add_your_company">Add your company</phrase>
+		<phrase category="frontend" key="see_all_companies">See all companies</phrase>
+		<phrase category="frontend" key="call_to_action_caption">It is really easy to apply</phrase>
+		<phrase category="frontend" key="call_to_action_content">Job seekers will be able to find your first-class job</phrase>
+		<phrase category="frontend" key="counter_caption"><![CDATA[Find your next <span>dream job</span>]]></phrase>
+		<phrase category="frontend" key="counter_content"><![CDATA[we’ve got <u>:count vacancies</u>]]></phrase>
+		<phrase category="frontend" key="newsletters_caption">Newsletter</phrase>
+		<phrase category="frontend" key="newsletters_content">Add your car for sale and be ready to receive many calls from potential buyers!</phrase>
+		<phrase category="frontend" key="type_your_email">Type your e-mail here and click subscribe</phrase>
+		<phrase category="frontend" key="name">Name</phrase>
+		<phrase category="frontend" key="email">Email</phrase>
+		<phrase category="frontend" key="powered_by_subrion"><![CDATA[© 2016 DreamJobs.<br>All materials are copyrighted and are the property of their respective owners.]]></phrase>
+		<phrase category="frontend" key="back_to_top">Back to top</phrase>
 	</phrases>
 </template>

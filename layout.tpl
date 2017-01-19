@@ -71,23 +71,31 @@
 					{/if}
 				}
 
+				.call-to-action {
+					{if $core.config.bg_call_to_action_use_color}
+						background: {$core.config.bg_call_to_action_color};
+					{elseif $core.config.bg_call_to_action}
+						background-image: url('{$core.page.nonProtocolUrl}uploads/{$core.config.bg_call_to_action}');
+					{/if}
+				}
+
 				.footer { background: {$core.config.footer_bg}; }
-				.nav-footer > li > a,
-				.nav-footer > li > a:focus { color: {$core.config.footer_link}; }
-				.nav-footer > li > a:hover { color: {$core.config.footer_link_hover}; }
-				.nav-footer > li.active > a,
-				.nav-footer > li.active > a:focus,
-				.nav-footer > li.active > a:hover { color: {$core.config.footer_link_active}; }
+				.nav-footer .nav-menu > li > a,
+				.nav-footer .nav-menu > li > a:focus { color: {$core.config.footer_link}; }
+				.nav-footer .nav-menu > li > a:hover { color: {$core.config.footer_link_hover}; }
+				.nav-footer .nav-menu > li.active > a,
+				.nav-footer .nav-menu > li.active > a:focus,
+				.nav-footer .nav-menu > li.active > a:hover { color: {$core.config.footer_link_active}; }
 			</style>
 		{/if}
 	</head>
 
 	<body class="page-{$core.page.name}">
-		<header class="header">
+		<header class="header hidden-xs">
 			<div class="inventory">
 				<div class="container">
 					{if $core.config.website_social}
-						<ul class="nav-inventory nav-inventory-social pull-right hidden-xs">
+						<ul class="nav-inventory nav-inventory-social pull-right">
 							{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter-square"></span></a></li>{/if}
 							{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook-square"></span></a></li>{/if}
 							{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus-square"></span></a></li>{/if}
@@ -157,10 +165,10 @@
 				<div class="brief-blocks">
 					<div class="container">
 						<div class="row">
-							<div class="{width section='brief-blocks' position='companies' tag='col-md-'}">
+							<div class="{width section='brief-blocks' position='companies' tag='col-md-'} brief-blocks__item">
 								{ia_blocks block='companies'}
 							</div>
-							<div class="{width section='brief-blocks' position='popular_categories' tag='col-md-'}">
+							<div class="{width section='brief-blocks' position='popular_categories' tag='col-md-'} brief-blocks__item">
 								{ia_blocks block='popular_categories'}
 							</div>
 						</div>
@@ -254,6 +262,12 @@
 			</div>
 		{/if}
 
+		{if isset($iaBlocks.call_to_action)}
+			<div class="call-to-action">
+				<div class="container">{ia_blocks block='call_to_action'}</div>
+			</div>
+		{/if}
+
 		{if isset($iaBlocks.verybottom)}
 			<div class="verybottom">
 				<div class="container">{ia_blocks block='verybottom'}</div>
@@ -261,38 +275,56 @@
 		{/if}
 
 		{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}
-			<div class="footer-blocks">
+			<footer class="footer">
 				<div class="container">
+					{ia_hooker name='smartyFrontBeforeFooterLinks'}
 					<div class="row">
-						<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
-						<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
-						<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
+								<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
+								<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
+							</div>
+						</div>
+						<div class="col-md-5 col-md-offset-1">
+							<div class="row">
+								<div class="col-md-6">
+									<a class="footer-brand{if !$core.config.enable_text_logo} footer-brand--img{/if}" href="{$smarty.const.IA_URL}">
+										{if $core.config.enable_text_logo}
+											{$core.config.logo_text}
+										{else}
+											{if !empty($core.config.site_logo)}
+												<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
+											{else}
+												<img src="{$img}logo.png" alt="{$core.config.site}">
+											{/if}
+										{/if}
+									</a>
+								</div>
+								<div class="col-md-6">
+									{if $core.config.website_social}
+										<ul class="nav-footer-social">
+											{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook-square"></span></a></li>{/if}
+											{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter-square"></span></a></li>{/if}
+											{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus-square"></span></a></li>{/if}
+											{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin-square"></span></a></li>{/if}
+										</ul>
+									{/if}
+								</div>
+							</div>
+							{if isset($iaBlocks.copyright)}
+								<div class="m-b">
+									{ia_blocks block='copyright'}
+								</div>
+							{/if}
+							<p class="copyright">&copy; {$smarty.server.REQUEST_TIME|date_format:'%Y'} {lang key='powered_by_subrion'}</p>
+						</div>
 					</div>
+					{ia_hooker name='smartyFrontAfterFooterLinks'}
 				</div>
-			</div>
+			</footer>
 		{/if}
 		{/if}
-
-		<footer class="footer">
-			<div class="container">
-				{ia_hooker name='smartyFrontBeforeFooterLinks'}
-
-				{if $core.config.website_social}
-					<ul class="nav-footer nav-footer-social">
-						{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter"></span></a></li>{/if}
-						{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook"></span></a></li>{/if}
-						{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus"></span></a></li>{/if}
-						{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin"></span></a></li>{/if}
-					</ul>
-				{/if}
-
-				{ia_blocks block='copyright'}
-
-				<p class="copyright">&copy; {$smarty.server.REQUEST_TIME|date_format:'%Y'} {lang key='powered_by_subrion'}</p>
-
-				{ia_hooker name='smartyFrontAfterFooterLinks'}
-			</div>
-		</footer>
 
 		<button class="back-to-top js-back-to-top"><span class="fa fa-angle-double-up"></span></button>
 
