@@ -6,11 +6,20 @@
 .footer {
   color: @footer-text-color;
   background: @brand-dark;
-  padding: @footer-padding-vertical @footer-padding-horizontal;
+  padding: @footer-padding-vertical @footer-padding-horizontal @footer-padding-vertical - 20;
 
   @media (max-width: @screen-md) {
     padding-top: @footer-padding-vertical/2.5;
     padding-bottom: @footer-padding-vertical/2.5;
+  }
+
+  &__left-side,
+  &__right-side {
+    margin-bottom: 0 !important;
+  }
+
+  [class*="col"] {
+    margin-bottom: 20px;
   }
 
   .box__caption {
@@ -22,29 +31,6 @@
 
   .box__content {
     margin: 0;
-  }
-
-  .list-unstyled {
-    > li {
-      font-weight: bold;
-      padding-left: 30px;
-      position: relative;
-      color: #fff;
-      margin-bottom: 12px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      > .fa {
-        position: absolute;
-        left: 0;
-        top: 2px;
-        font-size: 18px;
-        width: 20px;
-        text-align: center;
-      }
-    }
   }
 }
 
@@ -142,7 +128,7 @@
 
   > li {
     display: inline-block;
-    margin: 0 0 20px 20px;
+    margin-left: 10px;
 
     > a {
       display: block;
@@ -173,7 +159,7 @@
 // --------------------------------------------------
 
 .copyright {
-  margin: 0;
+  margin: 20px 0 0;
   line-height: 16px;
 
   a {

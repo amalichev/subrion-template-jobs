@@ -15,13 +15,15 @@
 		<position>inventory</position>
 		<position>teaser</position>
 		<position>quicksearch</position>
+		<position>featured_jobs</position>
+		<position>latest_jobs</position>
+		<position>candidates</position>
 		<position>verytop</position>
 		<position>top</position>
 		<position>bottom</position>
 		<position>verybottom</position>
 		<position>call_to_action</position>
 		<position>copyright</position>
-		<position>landing</position>
 
 		<section name="content">
 			<position fixed="1">left</position>
@@ -255,6 +257,7 @@
 
 	<changeset>
 		<menu position="account" status="active">account</menu>
+		<menu position="footer1" status="active">bottom</menu>
 
 		<block status="active" classname="box--border" position="right">common_statistics</block>
 		<block status="active" classname="box--border" position="left">filters</block>
@@ -267,7 +270,7 @@
 	</changeset>
 
 	<blocks>
-		<block name="teaser"
+		<block name="counter"
 			   title="Teaser block"
 			   position="teaser"
 			   header="0"
@@ -275,7 +278,7 @@
 			   sticky="1"
 			   status="active"
 			   order="1"
-			   filename="block.teaser.tpl"
+			   filename="packages/jobs/block.counter.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
@@ -291,6 +294,48 @@
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
+		<block name="featured_jobs"
+			   title="Featured jobs"
+			   position="featured_jobs"
+			   header="0"
+			   collapsible="0"
+			   sticky="0"
+			   pages="index"
+			   status="active"
+			   order="2"
+			   classname="box-companies"
+			   filename="packages/jobs/block.featured-jobs.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
+		<block name="latest_jobs"
+			   title="Latest jobs"
+			   position="latest_jobs"
+			   header="0"
+			   collapsible="0"
+			   sticky="0"
+			   pages="index"
+			   status="active"
+			   order="2"
+			   classname="box-companies"
+			   filename="packages/jobs/block.latest-jobs.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
+		<block name="candidates"
+			   title="Candidates"
+			   position="candidates"
+			   header="0"
+			   collapsible="0"
+			   sticky="0"
+			   pages="index"
+			   status="active"
+			   order="2"
+			   classname="box-companies"
+			   filename="packages/jobs/block.candidates.tpl"
+			   type="smarty">
+			<![CDATA[]]>
+		</block>
 		<block name="companies"
 			   title="Companies"
 			   position="companies"
@@ -301,7 +346,7 @@
 			   status="active"
 			   order="2"
 			   classname="box-companies"
-			   filename="block.companies.tpl"
+			   filename="packages/jobs/block.companies.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
@@ -315,7 +360,7 @@
 			   status="active"
 			   order="2"
 			   classname="box-popular-categories"
-			   filename="block.popular-categories.tpl"
+			   filename="packages/jobs/block.popular-categories.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
@@ -352,9 +397,10 @@
 		<phrase category="frontend" key="login">Log in</phrase>
 		<phrase category="frontend" key="register">Sign up</phrase>
 		<phrase category="frontend" key="category">Category</phrase>
-		<phrase category="frontend" key="location">Location</phrase>
 		<phrase category="frontend" key="keywords">Keywords</phrase>
-		<phrase category="frontend" key="find">Find</phrase>
+		<phrase category="frontend" key="featured_jobs">Featured jobs</phrase>
+		<phrase category="frontend" key="latest_jobs">Latest jobs</phrase>
+		<phrase category="frontend" key="candidates">Candidates</phrase>
 		<phrase category="frontend" key="find">Apply</phrase>
 		<phrase category="frontend" key="num_positions">:count positions</phrase>
 		<phrase category="frontend" key="add_your_company">Add your company</phrase>

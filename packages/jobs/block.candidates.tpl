@@ -1,0 +1,1 @@
+<pre>{lang key='candidates'}</pre>

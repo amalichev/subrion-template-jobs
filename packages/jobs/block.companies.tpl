@@ -46,7 +46,7 @@
 	<div class="col-md-6">
 		<a href="#" class="box-companies__item">
 			<span class="box-companies__image">
-				<img src="{$img}no-company.jpg" alt="">
+				<img src="{$img}no-preview.png" alt="">
 			</span>
 			<span class="box-companies__label">
 				<span class="box-companies__label__title">KPMG International</span>

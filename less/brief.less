@@ -86,7 +86,7 @@
     width: 100%;
     padding: 0 20px 0 120px;
     top: 50%;
-    transform: translateY(-50%);
+    .translate(0, -50%);
 
     &__title {
       margin-top: 20px;
@@ -116,8 +116,57 @@
 // --------------------------------------------------
 
 .box-popular-categories {
+  
+  &__item {
+
+    &:nth-child(1),
+    &:nth-child(2) {
+
+      > a {
+        border-top: none;
+      }
+    }
+  }
 
   &__title {
+    position: relative;
+    display: block;
+    padding: 13px 60px 13px 0;
+    font-size: 16px;
+    border-top: 1px solid #eff0f1;
 
+    &,
+    &:hover,
+    &:focus {
+      color: @text-color;
+      text-decoration: none;
+    }
+    
+    &:hover,
+    &:focus {
+      color: @brand-primary;
+
+      > span {
+        color: #fff;
+        border-color: @brand-primary;
+        background-color: @brand-primary;
+      }
+    }
+  }
+  
+  &__count {
+    position: absolute;
+    display: block;
+    width: 30px;
+    padding: 0 5px;
+    top: 50%;
+    right: 0;
+    line-height: 18px;
+    color: fade(@text-color, 40%);
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid fade(@text-color, 40%);
+    border-radius: 9px;
+    .translate(0, -50%);
   }
 }

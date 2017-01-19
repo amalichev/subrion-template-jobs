@@ -1,0 +1,1 @@
+<pre>{lang key='featured_jobs'}</pre>

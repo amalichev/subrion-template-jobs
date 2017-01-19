@@ -157,20 +157,54 @@
 		{/if}
 
 		{if $core.config.enable_landing && 'index' == $core.page.name}
-			<div class="landing">
-				{ia_blocks block='landing'}
-			</div>
+			{if isset($iaBlocks.featured_jobs) || isset($iaBlocks.latest_jobs) || isset($iaBlocks.candidates)}
+				<div class="landing">
+					<div class="container">
+						{$landingBlocks['featured_jobs'] = 'featured-jobs'}
+						{$landingBlocks['latest_jobs'] = 'latest-jobs'}
+						{$landingBlocks['candidates'] = 'candidates'}
+
+						{foreach $landingBlocks as $key => $id}
+							{if isset($iaBlocks[{$key}])}
+								{$landingBlockActive = $key}
+								{break}
+							{/if}
+						{/foreach}
+
+						<ul class="tabs">
+							{foreach $landingBlocks as $key => $id}
+								{if isset($iaBlocks[{$key}])}
+									<li{if $landingBlockActive == $key} class="active"{/if}><a href="#{$id}" data-toggle="tab">{lang key="{$key}"}</a></li>
+								{/if}
+							{/foreach}
+						</ul>
+						<div class="tab-content">
+							{foreach $landingBlocks as $key => $id}
+								{if isset($iaBlocks[{$key}])}
+									<div class="tab-pane{if $landingBlockActive == $key} active{/if}" id="{$id}">
+										{ia_blocks block="{$key}"}
+									</div>
+								{/if}
+							{/foreach}
+						</div>
+					</div>
+				</div>
+			{/if}
 
 			{if isset($iaBlocks.companies) || isset($iaBlocks.popular_categories)}
 				<div class="brief-blocks">
 					<div class="container">
 						<div class="row">
-							<div class="{width section='brief-blocks' position='companies' tag='col-md-'} brief-blocks__item">
-								{ia_blocks block='companies'}
-							</div>
-							<div class="{width section='brief-blocks' position='popular_categories' tag='col-md-'} brief-blocks__item">
-								{ia_blocks block='popular_categories'}
-							</div>
+							{if isset($iaBlocks.companies)}
+								<div class="{width section='brief-blocks' position='companies' tag='col-md-'} brief-blocks__item">
+									{ia_blocks block='companies'}
+								</div>
+							{/if}
+							{if isset($iaBlocks.popular_categories)}
+								<div class="{width section='brief-blocks' position='popular_categories' tag='col-md-'} brief-blocks__item">
+									{ia_blocks block='popular_categories'}
+								</div>
+							{/if}
 						</div>
 					</div>
 				</div>
@@ -274,56 +308,56 @@
 			</div>
 		{/if}
 
-		{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}
-			<footer class="footer">
-				<div class="container">
-					{ia_hooker name='smartyFrontBeforeFooterLinks'}
-					<div class="row">
-						<div class="col-md-6">
+		<footer class="footer">
+			<div class="container">
+				{ia_hooker name='smartyFrontBeforeFooterLinks'}
+				<div class="row">
+					{if isset($iaBlocks.footer1) || isset($iaBlocks.footer2) || isset($iaBlocks.footer3) || isset($iaBlocks.footer4)}
+						<div class="col-md-6 footer__left-side">
 							<div class="row">
 								<div class="{width section='footer-blocks' position='footer1' tag='col-md-'}">{ia_blocks block='footer1'}</div>
 								<div class="{width section='footer-blocks' position='footer2' tag='col-md-'}">{ia_blocks block='footer2'}</div>
 								<div class="{width section='footer-blocks' position='footer3' tag='col-md-'}">{ia_blocks block='footer3'}</div>
 							</div>
 						</div>
-						<div class="col-md-5 col-md-offset-1">
-							<div class="row">
-								<div class="col-md-6">
-									<a class="footer-brand{if !$core.config.enable_text_logo} footer-brand--img{/if}" href="{$smarty.const.IA_URL}">
-										{if $core.config.enable_text_logo}
-											{$core.config.logo_text}
+					{/if}
+					<div class="col-md-5 col-md-offset-1 footer__right-side">
+						<div class="row">
+							<div class="col-md-6">
+								<a class="footer-brand{if !$core.config.enable_text_logo} footer-brand--img{/if}" href="{$smarty.const.IA_URL}">
+									{if $core.config.enable_text_logo}
+										{$core.config.logo_text}
+									{else}
+										{if !empty($core.config.site_logo)}
+											<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
 										{else}
-											{if !empty($core.config.site_logo)}
-												<img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
-											{else}
-												<img src="{$img}logo.png" alt="{$core.config.site}">
-											{/if}
+											<img src="{$img}logo.png" alt="{$core.config.site}">
 										{/if}
-									</a>
-								</div>
-								<div class="col-md-6">
-									{if $core.config.website_social}
-										<ul class="nav-footer-social">
-											{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook-square"></span></a></li>{/if}
-											{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter-square"></span></a></li>{/if}
-											{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus-square"></span></a></li>{/if}
-											{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin-square"></span></a></li>{/if}
-										</ul>
 									{/if}
-								</div>
+								</a>
 							</div>
-							{if isset($iaBlocks.copyright)}
-								<div class="m-b">
-									{ia_blocks block='copyright'}
-								</div>
-							{/if}
-							<p class="copyright">&copy; {$smarty.server.REQUEST_TIME|date_format:'%Y'} {lang key='powered_by_subrion'}</p>
+							<div class="col-md-6">
+								{if $core.config.website_social}
+									<ul class="nav-footer-social">
+										{if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook-square"></span></a></li>{/if}
+										{if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter-square"></span></a></li>{/if}
+										{if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus-square"></span></a></li>{/if}
+										{if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin-square"></span></a></li>{/if}
+									</ul>
+								{/if}
+							</div>
 						</div>
+						{if isset($iaBlocks.copyright)}
+							<div class="m-b">
+								{ia_blocks block='copyright'}
+							</div>
+						{/if}
+						<p class="copyright">&copy; {$smarty.server.REQUEST_TIME|date_format:'%Y'} {lang key='powered_by_subrion'}</p>
 					</div>
-					{ia_hooker name='smartyFrontAfterFooterLinks'}
 				</div>
-			</footer>
-		{/if}
+				{ia_hooker name='smartyFrontAfterFooterLinks'}
+			</div>
+		</footer>
 		{/if}
 
 		<button class="back-to-top js-back-to-top"><span class="fa fa-angle-double-up"></span></button>
