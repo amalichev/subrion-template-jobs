@@ -8,7 +8,7 @@
 				<i class="icon-arrow-down"></i>
 			</a>
 			<ul class="dropdown-menu">
-				<li><a href="#" data-value="0"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></li>
+				<li><a href="#" data-value="0"><i class="fa fa-ellipsis-h"></i></a></li>
 				<li><a href="#" data-value="1">Action</a></li>
 				<li><a href="#" data-value="2">Another action</a></li>
 				<li><a href="#" data-value="3">Something else here</a></li>
