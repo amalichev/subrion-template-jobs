@@ -1,4 +1,9 @@
 <!--__b_{$id}-->
+
+{if in_array({$name}, array('counter', 'quicksearch', 'featured_listings', 'new_listings', 'candidates', 'call_to_action'))}
+	{$header = null}
+{/if}
+
 {if $header}
 	<div id="block_{$name}" 
 		 class="box {$classname}{if isset($collapsible) && $collapsible} collapsible{if isset($collapsed) && $collapsed} collapsed{/if}{/if}" {if isset($manageMode)} vm-hidden="{$hidden}"{/if}>

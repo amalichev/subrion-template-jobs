@@ -1,1 +1,0 @@
-<pre>{lang key='latest_jobs'}</pre>

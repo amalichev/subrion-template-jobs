@@ -1,0 +1,178 @@
+
+//
+// Cards
+// --------------------------------------------------
+
+.j-cards {
+  
+}
+
+.j-card {
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #fff;
+  .clearfix;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    .box-shadow(0 0 68px fade(#728fbe, 30%));
+  }
+
+  &__image {
+    float: left;
+    margin-right: 25px;
+
+    @media (max-width: @screen-lg) {
+      display: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 3px;
+    padding-right: 250px;
+    font-size: 20px;
+    font-weight: bold;
+
+    @media (max-width: @screen-xs) {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    > a {
+      color: @text-color;
+
+      &:hover,
+      &:focus {
+        color: @brand-primary;
+      }
+    }
+  }
+
+  &__additional-info {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: #67ddab;
+    font-size: 14px;
+    font-weight: normal;
+    .translate(0, -50%);
+
+    @media (max-width: @screen-xs) {
+      position: static;
+      display: block;
+      top: auto;
+      right: auto;
+      margin-top: 10px;
+      .translate(0, 0);
+    }
+
+    > span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+
+  &__type {
+    position: relative;
+    min-width: 85px;
+    padding: 0 10px;
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+
+    > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &--freelance {
+      color: darken(@brand-warning, 20%);
+      background-color: @brand-warning;
+    }
+
+    &--fulltime {
+      color: darken(@brand-info, 35%);
+      background-color: @brand-info;
+    }
+
+    &--part-time {
+      color: darken(@brand-info, 35%);
+      background-color: @brand-info;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: lighten(@brand-info, 20%);
+        z-index: 0;
+      }
+    }
+
+    &--remote {
+      color: darken(@brand-success, 20%);
+      background-color: @brand-success;
+    }
+  }
+
+  &__relations {
+    margin-bottom: 3px;
+    font-size: 16px;
+
+    > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @text-color;
+        text-decoration: none;
+      }
+    }
+
+    [class*="icon"] {
+      color: @brand-primary;
+    }
+  }
+
+  &__category {
+    margin-right: 20px;
+  }
+
+  &__summary {
+    position: relative;
+    margin-top: 10px;
+    padding-right: 260px;
+    color: fade(@text-color, 50%);
+
+    @media (max-width: @screen-xs) {
+      padding-right: 0;
+    }
+  }
+
+  &__support-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @media (max-width: @screen-xs) {
+      position: static;
+      display: block;
+      top: auto;
+      right: auto;
+      margin-top: 10px;
+      text-align: right;
+    }
+  }
+}

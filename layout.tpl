@@ -160,32 +160,35 @@
 			{if isset($iaBlocks.featured_jobs) || isset($iaBlocks.latest_jobs) || isset($iaBlocks.candidates)}
 				<div class="landing">
 					<div class="container">
-						{$landingBlocks['featured_jobs'] = 'featured-jobs'}
-						{$landingBlocks['latest_jobs'] = 'latest-jobs'}
-						{$landingBlocks['candidates'] = 'candidates'}
+						<div class="row">
+							<div class="j-cards col-md-10 col-md-offset-1">
+								{$landingBlocks['featured_listings'] = 'featured-listings'}
+								{$landingBlocks['new_listings'] = 'new-listings'}
+								{$landingBlocks['candidates'] = 'candidates'}
 
-						{foreach $landingBlocks as $key => $id}
-							{if isset($iaBlocks[{$key}])}
-								{$landingBlockActive = $key}
-								{break}
-							{/if}
-						{/foreach}
-
-						<ul class="tabs">
-							{foreach $landingBlocks as $key => $id}
-								{if isset($iaBlocks[{$key}])}
-									<li{if $landingBlockActive == $key} class="active"{/if}><a href="#{$id}" data-toggle="tab">{lang key="{$key}"}</a></li>
-								{/if}
-							{/foreach}
-						</ul>
-						<div class="tab-content">
-							{foreach $landingBlocks as $key => $id}
-								{if isset($iaBlocks[{$key}])}
-									<div class="tab-pane{if $landingBlockActive == $key} active{/if}" id="{$id}">
-										{ia_blocks block="{$key}"}
-									</div>
-								{/if}
-							{/foreach}
+								{foreach $landingBlocks as $key => $id}
+									{if isset($iaBlocks[{$key}])}
+										{$landingBlockActive = $key}
+										{break}
+									{/if}
+								{/foreach}
+								<ul class="tabs">
+									{foreach $landingBlocks as $key => $id}
+										{if isset($iaBlocks[{$key}])}
+											<li{if $landingBlockActive == $key} class="active"{/if}><a href="#{$id}" data-toggle="tab">{lang key="{$key}"}</a></li>
+										{/if}
+									{/foreach}
+								</ul>
+								<div class="tab-content">
+									{foreach $landingBlocks as $key => $id}
+										{if isset($iaBlocks[{$key}])}
+											<div class="tab-pane{if $landingBlockActive == $key} active{/if}" id="{$id}">
+												{ia_blocks block="{$key}"}
+											</div>
+										{/if}
+									{/foreach}
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

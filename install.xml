@@ -8,6 +8,8 @@
 	<date>2017-01-01</date>
 	<compatibility>4.0</compatibility>
 
+	<dependency type="package" exist="1">jobs</dependency>
+
 	<layout>
 		<position menu="1" movable="0">account</position>
 		<position menu="1" movable="0">mainmenu</position>
@@ -15,8 +17,8 @@
 		<position>inventory</position>
 		<position>teaser</position>
 		<position>quicksearch</position>
-		<position>featured_jobs</position>
-		<position>latest_jobs</position>
+		<position>featured_listings</position>
+		<position>new_listings</position>
 		<position>candidates</position>
 		<position>verytop</position>
 		<position>top</position>
@@ -294,9 +296,9 @@
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
-		<block name="featured_jobs"
+		<block name="featured_listings"
 			   title="Featured jobs"
-			   position="featured_jobs"
+			   position="featured_listings"
 			   header="0"
 			   collapsible="0"
 			   sticky="0"
@@ -304,13 +306,13 @@
 			   status="active"
 			   order="2"
 			   classname="box-companies"
-			   filename="packages/jobs/block.featured-jobs.tpl"
+			   filename="packages/jobs/block.featured-listings.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
-		<block name="latest_jobs"
-			   title="Latest jobs"
-			   position="latest_jobs"
+		<block name="new_listings"
+			   title="Latest listings"
+			   position="new_listings"
 			   header="0"
 			   collapsible="0"
 			   sticky="0"
@@ -318,7 +320,7 @@
 			   status="active"
 			   order="2"
 			   classname="box-companies"
-			   filename="packages/jobs/block.latest-jobs.tpl"
+			   filename="packages/jobs/block.new-listings.tpl"
 			   type="smarty">
 			<![CDATA[]]>
 		</block>
@@ -398,9 +400,13 @@
 		<phrase category="frontend" key="register">Sign up</phrase>
 		<phrase category="frontend" key="category">Category</phrase>
 		<phrase category="frontend" key="keywords">Keywords</phrase>
-		<phrase category="frontend" key="featured_jobs">Featured jobs</phrase>
-		<phrase category="frontend" key="latest_jobs">Latest jobs</phrase>
+		<phrase category="frontend" key="featured_listings">Featured jobs</phrase>
+		<phrase category="frontend" key="new_listings">Latest jobs</phrase>
 		<phrase category="frontend" key="candidates">Candidates</phrase>
+		<phrase category="frontend" key="fulltime">Fulltime</phrase>
+		<phrase category="frontend" key="freelance">Freelance</phrase>
+		<phrase category="frontend" key="part-time">Part-time</phrase>
+		<phrase category="frontend" key="remote">Remote</phrase>
 		<phrase category="frontend" key="find">Apply</phrase>
 		<phrase category="frontend" key="num_positions">:count positions</phrase>
 		<phrase category="frontend" key="add_your_company">Add your company</phrase>

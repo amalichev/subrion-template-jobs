@@ -8,6 +8,7 @@
 				<i class="icon-arrow-down"></i>
 			</a>
 			<ul class="dropdown-menu">
+				<li><a href="#" data-value="0">&nbsp;</a></li>
 				<li><a href="#" data-value="1">Action</a></li>
 				<li><a href="#" data-value="2">Another action</a></li>
 				<li><a href="#" data-value="3">Something else here</a></li>
@@ -44,9 +45,16 @@ $(function()
 			optionValue = $option.data('value'),
 			selectName = $select.data('name');
 
-		$('.quicksearch__select .dropdown-toggle > span').text($option.text());
-
-		$('.quicksearch input[name="' + selectName  +'"]').val(optionValue);
+		if (0 == parseInt(optionValue))
+		{
+			$('.quicksearch__select .dropdown-toggle > span').text(_t('category'));
+			$('.quicksearch input[name="' + selectName  +'"]').val('');
+		}
+		else
+		{
+			$('.quicksearch__select .dropdown-toggle > span').text($option.text());
+			$('.quicksearch input[name="' + selectName  +'"]').val(optionValue);
+		}
 	});
 });
 {/ia_add_js}
